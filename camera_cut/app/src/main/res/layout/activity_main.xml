@@ -1,15 +1,38 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <Button
-        android:id="@+id/btn_creama"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".CramaActivity"
-        android:text="拍照"
-        android:layout_alignParentStart="true" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_creama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".CramaActivity"
+            android:text="拍照及裁剪圖片"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/selectImageBtn"
+            android:text="選擇圖片"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cutImageBtn"
+            android:text="顯示裁剪之後照片"/>
+            <!--用於顯示圖片的訊息-->
+    </LinearLayout>
 
     <TextView
         android:id="@+id/text"
@@ -17,22 +40,20 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:background="#22000000"
-
         android:layout_below="@+id/btn_creama" />
 
     <ImageView
-        android:id="@+id/img_creama"
+        android:id="@+id/imageview"
         android:scaleType="fitXY"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_width="500dip"
+        android:layout_marginLeft="80dip"
+        android:layout_marginRight="80dip"
+        android:layout_width="400dp"
         android:layout_below="@+id/text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_height="500dip"
-        />
+        android:layout_marginTop="3dp"
+        android:layout_height="400dp" />
 
-</RelativeLayout>
+</LinearLayout>
 
 
 
