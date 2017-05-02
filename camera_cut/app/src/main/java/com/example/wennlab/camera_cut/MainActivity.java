@@ -1,4 +1,5 @@
 package com.example.wennlab.camera_cut;
+import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +7,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.jar.Attributes;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,11 +22,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
     //以下是老羅第二次
-    private Button selectImageBtn;
+   // private Button selectImageBtn;
     private Button cutImageBtn;
     //以下是第一次的
     private Button creama=null;
@@ -44,13 +48,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        selectImageBtn = (Button)this.findViewById(R.id.selectImageBtn);
+     //   selectImageBtn = (Button)this.findViewById(R.id.selectImageBtn);
         cutImageBtn = (Button)this.findViewById(R.id.cutImageBtn);
-        selectImageBtn.setOnClickListener(this);
+    //    selectImageBtn.setOnClickListener(this);
         cutImageBtn.setOnClickListener(this);
         //imageView.setImageBitmap(bm);
         init(); //imageview的註冊在init函式裡
         Log.i("TAG-->", ""+Environment.getExternalStorageDirectory());
+    }
+
+
+    // 使用系統當前日期加以調整作為照片的名稱
+    private String getPhotoFileName() {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "'IMG'_yyyyMMdd_HHmmss");
+        return dateFormat.format(date) + ".jpg";
     }
     private void init() {
         creama=(Button) findViewById(R.id.btn_creama);
@@ -122,12 +135,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.selectImageBtn:
+           /* case R.id.selectImageBtn:
                 //如何提取手機圖片庫並且進行選擇圖片功能
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent,IMAGE_SELECT);
-                break;
+                break; */
             case R.id.cutImageBtn:
                 Intent intent2 = getImageClipIntent();
                 startActivityForResult(intent2,IMAGE_CUT);
@@ -145,8 +158,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         intent.putExtra("aspectY", 1);
 
         // outputX,outputY 是剪裁圖片的寬高
-        intent.putExtra("outputX", 80);
-        intent.putExtra("outputY", 80);
+        intent.putExtra("outputX", 100);
+        intent.putExtra("outputY", 100);
         intent.putExtra("return-data", true);
         intent.putExtra("noFaceDetection", true);
         return intent;
@@ -177,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void startPhotoZoom(Uri uri) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
-        // crop为true是設置在開启的intent中設置顯示的view可以剪裁
+        // crop為true是設置在開啟的intent中設置顯示的view可以剪裁
         intent.putExtra("crop", "true");
 
         // aspectX aspectY 是寬高的比例
@@ -230,11 +243,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     }
 
-    // 使用系統當前日期加以調整作为照片的名稱
-    private String getPhotoFileName() {
-        Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "'IMG'_yyyyMMdd_HHmmss");
-        return dateFormat.format(date) + ".jpg";
+    public void show (View v)
+    {
+        RadioGroup rg = (RadioGroup)findViewById(R.id.share);
+
+        //依選取項目顯示不同訊息
+        switch(rg.getCheckedRadioButtonId()){
+            case R.id.radioButton_yes:
+                break;
+            case R.id.radioButton_no:
+                break;
+        }
     }
 }
