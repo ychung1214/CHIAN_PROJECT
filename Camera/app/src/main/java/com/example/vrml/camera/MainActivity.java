@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(opencamera, CAMERAID);
             Log.e("DEBUG", "");
         } else
-            Toast.makeText(MainActivity.this, "Your Camera is Wrong.", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Your Camera is Wrong", Toast.LENGTH_LONG).show();
     }
 
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 OPENCAMERA();
                 Toast.makeText(MainActivity.this, "Thanks ^^", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(MainActivity.this, "Oops!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Fuck U ^^凸", Toast.LENGTH_SHORT).show();
             }
         }
     }
