@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_intro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wennlab.intro.IntroActivity">
+
+    <!-- android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"-->
+
+<android.support.v4.view.ViewPager
+    android:id="@+id/view_paper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+<!-- </android.support.v4.view.ViewPager> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dots_height"
+        android:id="@+id/layoutDots"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dots_bottom_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha=".5"
+        android:layout_above="@+id/layoutDots"
+        android:background="@android:color/white">
+    </view>
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_next"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@null"
+        android:text="@string/next"
+        android:onClick="btnNextClick"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_skip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@null"
+        android:onClick="btnNextClick"
+        android:text="@string/skip"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>
