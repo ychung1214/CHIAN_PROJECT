@@ -1,0 +1,68 @@
+package com.example.vrml.camera;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+
+public class MainActivity extends AppCompatActivity implements OnClickListener {
+
+    private Button cutImageBtn;
+    //以下是第一次的
+    private Button creama=null;
+    private ImageView img_creama=null;
+    private TextView text=null;
+    OPEN_CAMERA open_camera;
+    Intent openphoto;
+    Intent opencamera;
+    private int PHOTOID; //
+    private int CAMERAID;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initCAMERA();
+    }
+
+    private void initCAMERA() {
+        open_camera = new OPEN_CAMERA();
+        openphoto = open_camera.openphoto();
+        opencamera = open_camera.opencamera();
+        PHOTOID = open_camera.getPhotoID();
+        CAMERAID = open_camera.getCameraID();
+
+    }
+
+
+    private void OPENPHOTO(){
+        startActivityForResult(openphoto,PHOTOID);
+    }
+
+    private void OPENCAMERA(){
+        if (opencamera.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(opencamera, CAMERAID);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode , Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            //處理圖片按照手機的螢幕大小顯示
+            if (requestCode == PHOTOID || requestCode == CAMERAID) {
+                if (data != null) {
+                    Bundle extras = data.getExtras();
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                }
+            }
+            //表示裁切圖片
+        } else if (requestCode == open_camera.getImageCut()) {
+            Bitmap bitmap = data.getParcelableExtra("data");
+            img_creama.setImageBitmap(bitmap);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+package com.example.vrml.camera;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
+
+/**
+ * Created by VRML on 2017/5/14.
+ */
+
+public class OPEN_CAMERA {
+
+
+    private static final int PHOTO_REQUEST_TAKEPHOTO = 1;// 拍照(CAMERA)
+    private static final int PHOTO_REQUEST_GALLERY = 2;// 從相冊中選擇(PHOTO)
+    private static final int PHOTO_REQUEST_CUT = 3;// 結果
+    private static final int IMAGE_SELECT=4; //選擇圖片
+    private static final int IMAGE_CUT=5; //裁剪圖片
+
+    public Intent openphoto(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        return intent;
+    }
+
+    public Intent opencamera(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        return takePictureIntent;
+    }
+
+    public int getCameraID(){return PHOTO_REQUEST_TAKEPHOTO;}
+    public int getPhotoID(){return PHOTO_REQUEST_GALLERY;}
+    public int getPhotoRequestCut() {return PHOTO_REQUEST_CUT;}
+    public int getImageSelect() {return IMAGE_SELECT;}
+    public int getImageCut() {return IMAGE_CUT;}
+}
