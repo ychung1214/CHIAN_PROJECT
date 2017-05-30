@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Intro Slider</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">下一頁</string>
+    <string name="skip">跳過</string>
+    <string name="start">開始</string>
+
+    <string name="slide_1_title">學生透過測驗學習更集中</string>
+    <string name="slide_1_desc">利用小遊戲讓學生更沒有壓力地學習！</string>
+
+    <string name="slide_2_title">老師間分享教材更方便</string>
+    <string name="slide_2_desc">透過雲端可以下載您喜歡的教材！</string>
+
+    <string name="slide_3_title">掌握學生學習狀況更簡單</string>
+    <string name="slide_3_desc">學生測驗後的成績通通秀給您！</string>
+
+    <string name="slide_4_title">老師可以自行新增教材唷</string>
+    <string name="slide_4_desc">對教材有更多想法？自己動手吧！</string>
+
+    <string name="play_again">再看一次</string>
+</resources>
