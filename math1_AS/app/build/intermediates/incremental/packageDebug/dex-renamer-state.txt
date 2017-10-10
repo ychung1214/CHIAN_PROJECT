@@ -1,0 +1,7 @@
+#Tue Oct 10 22:05:55 CST 2017
+base.0=C\:\\Users\\ASUS\\Desktop\\project\\CHIAN_PROJECT\\math1_AS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_d24cd4266c617eebbb608caf1f5838f95fa813a9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\ASUS\\Desktop\\project\\CHIAN_PROJECT\\math1_AS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_1e36d54ead656ee77321ca99814498419a275e3b\\classes.dex
+base.1=C\:\\Users\\ASUS\\Desktop\\project\\CHIAN_PROJECT\\math1_AS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_1e36d54ead656ee77321ca99814498419a275e3b
+file.0=C\:\\Users\\ASUS\\Desktop\\project\\CHIAN_PROJECT\\math1_AS\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_d24cd4266c617eebbb608caf1f5838f95fa813a9\\classes.dex

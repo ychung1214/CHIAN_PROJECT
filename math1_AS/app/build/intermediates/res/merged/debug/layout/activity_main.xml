@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.math1_as.MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+            <Button
+                android:text="加法範例"
+                android:textSize="80dp"
+                android:layout_width="match_parent"
+                android:id="@+id/add"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:elevation="0dp"
+                android:background="#e8c4ef"/>
+
+            <Button
+                android:textSize="80dp"
+                android:text="減法範例"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/minus"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:background="#c4e7ef"/>
+
+            <Button
+                android:textSize="80dp"
+                android:text="試著練習"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drag"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:background="#c4efcb"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
